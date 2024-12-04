@@ -6,6 +6,8 @@
 
 免費開源狗狗 API：https://dog.ceo/api/breeds/image/random
 
+![index](./public/pc_img.jpg)
+
 ## 專案的運行方式
 
 ```sh
