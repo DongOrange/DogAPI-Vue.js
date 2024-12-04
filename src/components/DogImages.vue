@@ -13,8 +13,9 @@ const getDogImage = async () => {
         console.log( "發生了一點錯誤", error )
     }
 };
-
-getDogImage();
+onMounted(() => {
+    getDogImage();
+});
 </script>
 
 <template>
