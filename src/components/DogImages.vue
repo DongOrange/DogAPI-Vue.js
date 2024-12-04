@@ -1,5 +1,20 @@
 <script setup>
 import { ref } from 'vue'
+
+const dogImage = ref();
+
+const getDogImage = async () => {
+    try{
+        const response = await fetch("https://dog.ceo/api/breeds/image/random");
+        const data = await response.json();
+
+        dogImage.value = data.message
+    }catch(error){
+        console.log( "發生了一點錯誤", error )
+    }
+};
+
+getDogImage();
 </script>
 
 <template>
@@ -7,9 +22,9 @@ import { ref } from 'vue'
     <section>
         <h1>狗狗生產器</h1>
         <div class="imgBox">
-            <img class="img" src="">
+            <img class="img" v-if="dogImage" :src="dogImage">
         </div>
-        <button class="btn">開始生產！</button>
+        <button class="btn" @click="getDogImage()">開始生產！</button>
     </section>
   </main>
 </template>
@@ -44,6 +59,7 @@ h1{
     background-color: #eee;
     aspect-ratio: 1 / 1;
     margin-bottom: 30px;
+    overflow: hidden;
 }
 .imgBox .img{
     position: absolute;
@@ -52,6 +68,7 @@ h1{
     max-width: 100%;
     max-height: 100%;
     width: 100%;
+    object-fit: cover;
 }
 .btn{
     background: #ff9500;
@@ -63,5 +80,6 @@ h1{
     margin: auto;
     display: block;
     font-size: 16px;
+    cursor: pointer;
 }
 </style>
