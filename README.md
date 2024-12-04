@@ -1,28 +1,24 @@
-# dogimages
+# 狗狗生產器
 
-This template should help get you started developing with Vue 3 in Vite.
+### 專案說明
 
-## Recommended IDE Setup
+練習使用 Vue.js 去串接免費 API 的練習
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+免費開源狗狗 API：https://dog.ceo/api/breeds/image/random
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+## 專案的運行方式
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### 執行專案
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Vite 打包
 
 ```sh
 npm run build
