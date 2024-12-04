@@ -1,7 +1,7 @@
 <script setup>
-import { ref } from 'vue'
+import { ref,onMounted } from 'vue'
 
-const dogImage = ref();
+const dogImage = ref(null);
 
 const getDogImage = async () => {
     try{
@@ -13,6 +13,7 @@ const getDogImage = async () => {
         console.log( "發生了一點錯誤", error )
     }
 };
+
 onMounted(() => {
     getDogImage();
 });
@@ -33,12 +34,13 @@ onMounted(() => {
 <style scoped>
 main{
     width: 100%;
-    height: 100dvh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #eee;
     padding: 20px;
+    min-height: 100dvh;
 }
 section{
     background-color: #fff;
